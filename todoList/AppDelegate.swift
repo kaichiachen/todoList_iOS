@@ -1,13 +1,7 @@
-//
-//  AppDelegate.swift
-//  todoList
-//
-//  Created by Andy Chen on 12/23/15.
-//  Copyright © 2015 Andy chen. All rights reserved.
-//
-
 import UIKit
 import FBSDKCoreKit
+import Parse
+import Bolts
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -18,7 +12,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
         FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
-        
+        Parse.enableLocalDatastore()
+        Parse.setApplicationId("0rQEriLUmiwWYn4ddii54AyNELYoMZJ1UoTqmVHT",
+            clientKey: "T1tkdW7tO4X4ouBU8H3hGe9nDujhLRiKceweZukA")
+        PFAnalytics.trackAppOpenedWithLaunchOptions(launchOptions)
         return true
     }
     

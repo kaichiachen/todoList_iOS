@@ -15,7 +15,7 @@
 		A1ED6C841C2A7F92003A394F /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A1ED6C821C2A7F92003A394F /* FBSDKCoreKit.framework */; };
 		A1ED6C851C2A7F92003A394F /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A1ED6C831C2A7F92003A394F /* FBSDKLoginKit.framework */; };
 		A1ED6C871C2A8F38003A394F /* DataCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1ED6C861C2A8F38003A394F /* DataCache.swift */; };
-		A1ED6C891C2A8FF1003A394F /* LIstViewTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1ED6C881C2A8FF1003A394F /* LIstViewTable.swift */; };
+		A1ED6C891C2A8FF1003A394F /* ListViewTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1ED6C881C2A8FF1003A394F /* ListViewTable.swift */; };
 		A1ED6C8D1C2A93EA003A394F /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A1ED6C8C1C2A93EA003A394F /* CoreLocation.framework */; };
 		A1ED6C8F1C2A93F7003A394F /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A1ED6C8E1C2A93F7003A394F /* CoreGraphics.framework */; };
 		A1ED6C911C2A9400003A394F /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A1ED6C901C2A9400003A394F /* StoreKit.framework */; };
@@ -28,6 +28,10 @@
 		A1ED6CA21C2A9596003A394F /* libsqlite3.0.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = A1ED6CA11C2A9596003A394F /* libsqlite3.0.tbd */; };
 		A1ED6CA41C2A9772003A394F /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A1ED6CA31C2A9772003A394F /* AudioToolbox.framework */; };
 		A1ED6CA61C2A9789003A394F /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A1ED6CA51C2A9789003A394F /* Bolts.framework */; };
+		A1ED6CA81C2ACC3C003A394F /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1ED6CA71C2ACC3C003A394F /* Utils.swift */; };
+		A1ED6CAE1C2ACF1F003A394F /* OverView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A1ED6CAD1C2ACF1F003A394F /* OverView.xib */; };
+		A1ED6CB01C2ACF73003A394F /* TodoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1ED6CAF1C2ACF73003A394F /* TodoView.swift */; };
+		A1ED6CB21C2ACFA4003A394F /* HaveDoneView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1ED6CB11C2ACFA4003A394F /* HaveDoneView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,13 +39,13 @@
 		A1ED6C691C2A7F3A003A394F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A1ED6C6B1C2A7F3A003A394F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		A1ED6C6E1C2A7F3A003A394F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		A1ED6C701C2A7F3A003A394F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		A1ED6C701C2A7F3A003A394F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = todoList/Assets.xcassets; sourceTree = "<group>"; };
 		A1ED6C731C2A7F3A003A394F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		A1ED6C751C2A7F3A003A394F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A1ED6C751C2A7F3A003A394F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = todoList/Info.plist; sourceTree = "<group>"; };
 		A1ED6C821C2A7F92003A394F /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKCoreKit.framework; sourceTree = "<group>"; };
 		A1ED6C831C2A7F92003A394F /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKLoginKit.framework; sourceTree = "<group>"; };
 		A1ED6C861C2A8F38003A394F /* DataCache.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataCache.swift; sourceTree = "<group>"; };
-		A1ED6C881C2A8FF1003A394F /* LIstViewTable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LIstViewTable.swift; sourceTree = "<group>"; };
+		A1ED6C881C2A8FF1003A394F /* ListViewTable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListViewTable.swift; sourceTree = "<group>"; };
 		A1ED6C8C1C2A93EA003A394F /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		A1ED6C8E1C2A93F7003A394F /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		A1ED6C901C2A9400003A394F /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
@@ -49,12 +53,16 @@
 		A1ED6C941C2A9422003A394F /* libz.1.1.3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.1.1.3.tbd; path = usr/lib/libz.1.1.3.tbd; sourceTree = SDKROOT; };
 		A1ED6C961C2A943B003A394F /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		A1ED6C981C2A9445003A394F /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
-		A1ED6C9A1C2A948E003A394F /* todoList-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "todoList-Bridging-Header.h"; sourceTree = "<group>"; };
+		A1ED6C9A1C2A948E003A394F /* todoList-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "todoList-Bridging-Header.h"; path = "todoList/todoList-Bridging-Header.h"; sourceTree = "<group>"; };
 		A1ED6C9D1C2A94DE003A394F /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
 		A1ED6C9F1C2A9588003A394F /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		A1ED6CA11C2A9596003A394F /* libsqlite3.0.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.0.tbd; path = usr/lib/libsqlite3.0.tbd; sourceTree = SDKROOT; };
 		A1ED6CA31C2A9772003A394F /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		A1ED6CA51C2A9789003A394F /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
+		A1ED6CA71C2ACC3C003A394F /* Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
+		A1ED6CAD1C2ACF1F003A394F /* OverView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OverView.xib; sourceTree = "<group>"; };
+		A1ED6CAF1C2ACF73003A394F /* TodoView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TodoView.swift; sourceTree = "<group>"; };
+		A1ED6CB11C2ACFA4003A394F /* HaveDoneView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HaveDoneView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,6 +93,7 @@
 		A1ED6C5D1C2A7F3A003A394F = {
 			isa = PBXGroup;
 			children = (
+				A1ED6CAC1C2ACEF5003A394F /* Resources */,
 				A1ED6C7D1C2A7F72003A394F /* frameworks */,
 				A1ED6C681C2A7F3A003A394F /* todoList */,
 				A1ED6C671C2A7F3A003A394F /* Products */,
@@ -102,15 +111,10 @@
 		A1ED6C681C2A7F3A003A394F /* todoList */ = {
 			isa = PBXGroup;
 			children = (
+				A1ED6CAB1C2ACEE5003A394F /* Utils */,
+				A1ED6CAA1C2ACEC2003A394F /* UI */,
+				A1ED6CA91C2ACEA8003A394F /* ViewController */,
 				A1ED6C691C2A7F3A003A394F /* AppDelegate.swift */,
-				A1ED6C6B1C2A7F3A003A394F /* ViewController.swift */,
-				A1ED6C6D1C2A7F3A003A394F /* Main.storyboard */,
-				A1ED6C701C2A7F3A003A394F /* Assets.xcassets */,
-				A1ED6C721C2A7F3A003A394F /* LaunchScreen.storyboard */,
-				A1ED6C751C2A7F3A003A394F /* Info.plist */,
-				A1ED6C861C2A8F38003A394F /* DataCache.swift */,
-				A1ED6C881C2A8FF1003A394F /* LIstViewTable.swift */,
-				A1ED6C9A1C2A948E003A394F /* todoList-Bridging-Header.h */,
 			);
 			path = todoList;
 			sourceTree = "<group>";
@@ -135,6 +139,46 @@
 			);
 			name = frameworks;
 			path = todoList;
+			sourceTree = "<group>";
+		};
+		A1ED6CA91C2ACEA8003A394F /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				A1ED6C6B1C2A7F3A003A394F /* ViewController.swift */,
+				A1ED6C881C2A8FF1003A394F /* ListViewTable.swift */,
+			);
+			name = ViewController;
+			sourceTree = "<group>";
+		};
+		A1ED6CAA1C2ACEC2003A394F /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				A1ED6C6D1C2A7F3A003A394F /* Main.storyboard */,
+				A1ED6C721C2A7F3A003A394F /* LaunchScreen.storyboard */,
+				A1ED6CAD1C2ACF1F003A394F /* OverView.xib */,
+				A1ED6CAF1C2ACF73003A394F /* TodoView.swift */,
+				A1ED6CB11C2ACFA4003A394F /* HaveDoneView.swift */,
+			);
+			name = UI;
+			sourceTree = "<group>";
+		};
+		A1ED6CAB1C2ACEE5003A394F /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				A1ED6C861C2A8F38003A394F /* DataCache.swift */,
+				A1ED6CA71C2ACC3C003A394F /* Utils.swift */,
+			);
+			name = Utils;
+			sourceTree = "<group>";
+		};
+		A1ED6CAC1C2ACEF5003A394F /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				A1ED6C701C2A7F3A003A394F /* Assets.xcassets */,
+				A1ED6C751C2A7F3A003A394F /* Info.plist */,
+				A1ED6C9A1C2A948E003A394F /* todoList-Bridging-Header.h */,
+			);
+			name = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -195,6 +239,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A1ED6CAE1C2ACF1F003A394F /* OverView.xib in Resources */,
 				A1ED6C741C2A7F3A003A394F /* LaunchScreen.storyboard in Resources */,
 				A1ED6C711C2A7F3A003A394F /* Assets.xcassets in Resources */,
 				A1ED6C6F1C2A7F3A003A394F /* Main.storyboard in Resources */,
@@ -208,8 +253,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A1ED6CB01C2ACF73003A394F /* TodoView.swift in Sources */,
+				A1ED6CA81C2ACC3C003A394F /* Utils.swift in Sources */,
 				A1ED6C6C1C2A7F3A003A394F /* ViewController.swift in Sources */,
-				A1ED6C891C2A8FF1003A394F /* LIstViewTable.swift in Sources */,
+				A1ED6CB21C2ACFA4003A394F /* HaveDoneView.swift in Sources */,
+				A1ED6C891C2A8FF1003A394F /* ListViewTable.swift in Sources */,
 				A1ED6C6A1C2A7F3A003A394F /* AppDelegate.swift in Sources */,
 				A1ED6C871C2A8F38003A394F /* DataCache.swift in Sources */,
 			);

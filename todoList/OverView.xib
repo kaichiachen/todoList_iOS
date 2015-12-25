@@ -23,6 +23,9 @@
                 <constraint firstAttribute="bottom" secondItem="Pta-W3-evi" secondAttribute="bottom" id="mvB-ch-H1W"/>
                 <constraint firstItem="Pta-W3-evi" firstAttribute="top" secondItem="V8W-Mm-CC9" secondAttribute="top" id="v6T-FX-6af"/>
             </constraints>
+            <connections>
+                <outlet property="tableView" destination="Pta-W3-evi" id="Csk-ud-LXT"/>
+            </connections>
             <point key="canvasLocation" x="423" y="279"/>
         </view>
         <view contentMode="scaleToFill" id="qts-Ge-ybw" customClass="HaveDoneView" customModule="todoList" customModuleProvider="target">
@@ -41,6 +44,9 @@
                 <constraint firstAttribute="bottom" secondItem="Lf0-FD-RWZ" secondAttribute="bottom" id="NwJ-jm-WYV"/>
                 <constraint firstItem="Lf0-FD-RWZ" firstAttribute="top" secondItem="qts-Ge-ybw" secondAttribute="top" id="dsN-9T-AIP"/>
             </constraints>
+            <connections>
+                <outlet property="tableView" destination="Lf0-FD-RWZ" id="KnJ-32-UGf"/>
+            </connections>
             <point key="canvasLocation" x="1100" y="272"/>
         </view>
     </objects>

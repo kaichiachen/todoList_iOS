@@ -17,6 +17,8 @@ class ListViewTable: UIViewController,UIScrollViewDelegate {
             mainScrollView.pagingEnabled = true
             mainScrollView.showsHorizontalScrollIndicator = false
             mainScrollView.showsVerticalScrollIndicator = false
+            mainScrollView.layer.borderWidth = 2
+            mainScrollView.layer.borderColor = UIColor.yellowColor().CGColor
         }
     }
     
@@ -46,14 +48,13 @@ class ListViewTable: UIViewController,UIScrollViewDelegate {
     
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
-        
         pageWidth = mainScrollView.frame.width
         pageHeight = mainScrollView.frame.height
         for i in 0..<2 {
-            if let scrollView = loadFromNibNamed("OverView", index: i) {
-                scrollView.frame = CGRectMake(CGFloat(i)*pageWidth, 0, pageWidth, pageHeight)
-                UIViewList.append(scrollView)
-                mainScrollView.addSubview(scrollView)
+            if let view = loadFromNibNamed("OverView", index: i) {
+                view.frame = CGRectMake(CGFloat(i)*pageWidth, 0, pageWidth, pageHeight)
+                UIViewList.append(view)
+                mainScrollView.addSubview(view)
             } else {
                 return
             }

@@ -14,7 +14,6 @@ class ViewController: UIViewController {
         loginButton.backgroundColor = UIColor.grayColor()
         loginButton.frame = CGRectMake(20,20,180,40)
         loginButton.setTitle("login", forState: UIControlState.Normal)
-        //loginButton.readPermissions = ["public_profile","email"]
         
         loginButton.addTarget(self, action: "click", forControlEvents: UIControlEvents.TouchUpInside)
         

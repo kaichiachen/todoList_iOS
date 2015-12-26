@@ -13,59 +13,17 @@ public class DataCache {
         return dataCache!
     }
     
-    /**
-     standard request parameter
-     
-     - returns: standard request parameter
-     */
-    public func getRequestParameter() -> NSDictionary? {
-        let data = getUserData()
-        if data.3 == false || data.2 == nil {
-            return nil
-        }
-        var request = [String:String]()
-        request["uid"] = data.0
-        request["token"] = data.1
-        return request
-    }
-    
-    public func setUserToken(token:String) {
+    public func setUserLoginData(id:String,token:String) {
         userDefaults.setObject(token ?? "",forKey:"UserToken")
+        userDefaults.setObject(id ?? "",forKey:"UserId")
         userDefaults.synchronize()
     }
     
-    public func getUserToken() -> String {
+    public func getUserLoginData() -> (String,String) {
         
         let token = userDefaults.objectForKey("UserToken") as? String
-        return token ?? ""
-    }
-    
-    /**
-     set user data
-     
-     - parameter id:       s + student id
-     - parameter password: portal password
-     - parameter token:    request token
-     */
-    public func setUserData(id:String, password:String, token:String, login:Bool = true) {
-        userDefaults.setObject(id,forKey:"UserId")
-        userDefaults.setObject(password,forKey:"UserPassword")
-        userDefaults.setObject(token ?? "",forKey:"UserToken")
-        userDefaults.setObject(login,forKey:"UserLogin")
-        userDefaults.synchronize()
-    }
-    
-    /**
-     get user foundation data
-     
-     - returns: user foundation data
-     */
-    public func getUserData() -> (String?,String?,String?,Bool) {
-        let username = userDefaults.objectForKey("UserId") as? String
-        let password = userDefaults.objectForKey("UserPassword") as? String
-        let token = userDefaults.objectForKey("UserToken") as? String
-        let login = userDefaults.objectForKey("UserLogin") as? Bool
-        return (username, password, token, login ?? false)
+        let id = userDefaults.objectForKey("UserId") as? String
+        return (id ?? "", token ?? "")
     }
     
     public func setUserPersonalInfo(name:String, dep:String){

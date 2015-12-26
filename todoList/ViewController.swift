@@ -1,6 +1,7 @@
 import UIKit
 import FBSDKLoginKit
 import Parse
+import SlideMenuControllerSwift
 
 class ViewController: UIViewController {
 
@@ -28,14 +29,13 @@ class ViewController: UIViewController {
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        DataCache.shareInstance().setUserToken(self.token!)
         if (FBSDKAccessToken.currentAccessToken() != nil) {
             FBSDKGraphRequest(graphPath: "me", parameters: nil).startWithCompletionHandler(){
                 connection,result,error in
                 if (error != nil) {
                     print("error: \(error)")
                 } else {
-                    let id = result["id"]!
+                    let id = result["id"] as! String
                     let name = result["name"]
                     print("result: \(id)")
                     
@@ -44,12 +44,12 @@ class ViewController: UIViewController {
                         let object:NSArray = try query.findObjects()
                         PFObject.pinAllInBackground(object as? [PFObject])
                         query.fromLocalDatastore()
-                        query.whereKey("facebookid", equalTo: (id as! String))
+                        query.whereKey("facebookid", equalTo: (id ))
                         query.findObjectsInBackgroundWithBlock(){
                             block in
                             if block.0!.count == 0 {
                                 let testObject = PFObject(className: "User")
-                                testObject["facebookid"] = "\((id as! String))"
+                                testObject["facebookid"] = "\((id ))"
                                 testObject["username"] = "\((name as! String))"
                                 testObject.saveInBackgroundWithBlock { (success: Bool, error: NSError?) -> Void in
                                     print("Object has been saved.")
@@ -60,9 +60,14 @@ class ViewController: UIViewController {
                     } catch _ {
                         
                     }
+                    DataCache.shareInstance().setUserLoginData(id, token: self.token!)
                 }
             }
         }
+        let appDelegate:AppDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let slideMenuController = appDelegate.setSlideView(storyboard)
+        appDelegate.window?.rootViewController = slideMenuController
     }
     
     func click(){

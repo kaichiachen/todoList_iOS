@@ -4,7 +4,17 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>ChameleonFramework.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Pods.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>SWTableViewCell.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -17,12 +27,22 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>0C6E15085A6BFDDFD594599E22151C60</key>
+		<key>160BEB83B8114B712D331680664BCD08</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>CCF12103F00989F48992B7A4D65948BA</key>
+		<key>20564F913C3964AE292975038EE9EBBF</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>2CDEAC1B2596659D9550738B2D824C42</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>5172ACAB7FEA22813859DC97CA0AA16F</key>
 		<dict>
 			<key>primary</key>
 			<true/>

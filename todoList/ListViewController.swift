@@ -2,11 +2,11 @@ import UIKit
 import FBSDKCoreKit
 import Parse
 
-class ListViewTable: UIViewController,UIScrollViewDelegate {
+class ListViewController: BasicViewController ,UIScrollViewDelegate {
     
     
     @IBAction func openMenu(sender: AnyObject) {
-        
+        self.slideMenuController()?.openLeft()
     }
     @IBAction func addTodoList(sender: AnyObject) {
     }
@@ -15,10 +15,9 @@ class ListViewTable: UIViewController,UIScrollViewDelegate {
         didSet{
             mainScrollView.delegate = self
             mainScrollView.pagingEnabled = true
+            mainScrollView.scrollEnabled = false
             mainScrollView.showsHorizontalScrollIndicator = false
             mainScrollView.showsVerticalScrollIndicator = false
-            mainScrollView.layer.borderWidth = 2
-            mainScrollView.layer.borderColor = UIColor.yellowColor().CGColor
         }
     }
     
@@ -43,11 +42,17 @@ class ListViewTable: UIViewController,UIScrollViewDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        DataController.shareInstance().getTodoList()
+        DataController.shareInstance().getHaveDoneList()
     }
-    
+    var initialize = false
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
+        if initialize {
+            return
+        } else {
+            initialize = true
+        }
         pageWidth = mainScrollView.frame.width
         pageHeight = mainScrollView.frame.height
         for i in 0..<2 {
@@ -59,8 +64,8 @@ class ListViewTable: UIViewController,UIScrollViewDelegate {
                 return
             }
         }
-//        (UIViewList[0] as! MarkView).initializeData(self)
-//        (UIViewList[1] as! HomeWorkView).initializeData(self)
+        (UIViewList[0] as! TodoView).initialize(self)
+        (UIViewList[1] as! HaveDoneView).initialize(self)
         mainScrollView.contentSize = CGSize(width: pageWidth*2, height: pageHeight)
     }
     

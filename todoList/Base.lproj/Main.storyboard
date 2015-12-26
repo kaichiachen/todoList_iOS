@@ -65,10 +65,10 @@
             </objects>
             <point key="canvasLocation" x="2140" y="-207"/>
         </scene>
-        <!--List View Table-->
+        <!--todoList-->
         <scene sceneID="35I-ZP-2SE">
             <objects>
-                <viewController storyboardIdentifier="mainList" useStoryboardIdentifierAsRestorationIdentifier="YES" id="bIB-4P-7qA" customClass="ListViewTable" customModule="todoList" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="list" automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" id="bIB-4P-7qA" customClass="ListViewController" customModule="todoList" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="XaE-Hm-e8f"/>
                         <viewControllerLayoutGuide type="bottom" id="aeF-d0-0B0"/>
@@ -78,27 +78,37 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gjf-ip-h3X">
-                                <rect key="frame" x="0.0" y="107" width="600" height="493"/>
+                                <rect key="frame" x="0.0" y="117" width="600" height="483"/>
                             </scrollView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NSA-rU-GSk">
-                                <rect key="frame" x="300" y="64" width="300" height="40"/>
-                                <state key="normal" image="ic_assignment_turned_in"/>
+                                <rect key="frame" x="300" y="64" width="300" height="50"/>
+                                <fontDescription key="fontDescription" name="PingFangTC-Semibold" family="PingFang TC" pointSize="12"/>
+                                <inset key="titleEdgeInsets" minX="-25" minY="30" maxX="0.0" maxY="0.0"/>
+                                <inset key="imageEdgeInsets" minX="35" minY="0.0" maxX="0.0" maxY="15"/>
+                                <state key="normal" title="已完成" image="ic_assignment_turned_in">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
                                 <connections>
                                     <action selector="haveDoneButton:" destination="bIB-4P-7qA" eventType="touchUpInside" id="qT1-ci-3ph"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="k7D-1C-XKg">
-                                <rect key="frame" x="0.0" y="64" width="300" height="40"/>
+                                <rect key="frame" x="0.0" y="64" width="300" height="50"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="40" id="hCd-O3-kig"/>
+                                    <constraint firstAttribute="height" constant="50" id="hCd-O3-kig"/>
                                 </constraints>
-                                <state key="normal" image="ic_assignment_late"/>
+                                <fontDescription key="fontDescription" name="PingFangTC-Semibold" family="PingFang TC" pointSize="12"/>
+                                <inset key="titleEdgeInsets" minX="-25" minY="30" maxX="0.0" maxY="0.0"/>
+                                <inset key="imageEdgeInsets" minX="35" minY="0.0" maxX="0.0" maxY="15"/>
+                                <state key="normal" title="未完成" image="ic_assignment_late">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
                                 <connections>
                                     <action selector="toDoButton:" destination="bIB-4P-7qA" eventType="touchUpInside" id="7Yl-E8-DDg"/>
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EtT-rs-oBA">
-                                <rect key="frame" x="0.0" y="104" width="300" height="3"/>
+                                <rect key="frame" x="0.0" y="114" width="300" height="3"/>
                                 <color key="backgroundColor" red="0.30980392159999998" green="0.72156862749999995" blue="0.62352941179999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="3" id="zkv-XR-wHh"/>
@@ -112,18 +122,18 @@
                             <constraint firstItem="EtT-rs-oBA" firstAttribute="width" secondItem="k7D-1C-XKg" secondAttribute="width" id="8fb-ij-nEL"/>
                             <constraint firstItem="gjf-ip-h3X" firstAttribute="leading" secondItem="Cly-Wp-OW8" secondAttribute="leadingMargin" constant="-20" id="9sc-xC-xnI"/>
                             <constraint firstItem="k7D-1C-XKg" firstAttribute="height" secondItem="NSA-rU-GSk" secondAttribute="height" id="ER1-oj-CCh"/>
+                            <constraint firstItem="EtT-rs-oBA" firstAttribute="top" secondItem="k7D-1C-XKg" secondAttribute="bottom" id="FB4-eE-et5"/>
                             <constraint firstAttribute="trailingMargin" secondItem="NSA-rU-GSk" secondAttribute="trailing" constant="-20" id="FHV-jV-rUj"/>
                             <constraint firstItem="k7D-1C-XKg" firstAttribute="width" secondItem="NSA-rU-GSk" secondAttribute="width" id="IZi-SE-z4C"/>
                             <constraint firstItem="NSA-rU-GSk" firstAttribute="top" secondItem="XaE-Hm-e8f" secondAttribute="bottom" id="KQc-5J-ERi"/>
                             <constraint firstItem="k7D-1C-XKg" firstAttribute="leading" secondItem="Cly-Wp-OW8" secondAttribute="leadingMargin" constant="-20" id="VtY-Jd-KsQ"/>
                             <constraint firstItem="NSA-rU-GSk" firstAttribute="leading" secondItem="k7D-1C-XKg" secondAttribute="trailing" id="cdu-qh-qek"/>
-                            <constraint firstItem="EtT-rs-oBA" firstAttribute="top" secondItem="k7D-1C-XKg" secondAttribute="bottom" id="pQO-dM-DOl"/>
                             <constraint firstItem="aeF-d0-0B0" firstAttribute="top" secondItem="gjf-ip-h3X" secondAttribute="bottom" id="qfA-dU-KsG"/>
                             <constraint firstItem="gjf-ip-h3X" firstAttribute="top" secondItem="EtT-rs-oBA" secondAttribute="bottom" id="y9a-c4-fdF"/>
                             <constraint firstAttribute="trailingMargin" secondItem="gjf-ip-h3X" secondAttribute="trailing" constant="-20" id="yRk-Q1-f0f"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="oYA-Do-enJ">
+                    <navigationItem key="navigationItem" title="todoList" id="oYA-Do-enJ">
                         <barButtonItem key="leftBarButtonItem" image="ic_menu_white" id="qnm-ES-58Y">
                             <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <connections>
@@ -134,6 +144,7 @@
                             <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <connections>
                                 <action selector="addTodoList:" destination="bIB-4P-7qA" id="mDs-Al-2DA"/>
+                                <segue destination="6ZF-ZM-DrS" kind="push" id="8tf-7M-mbV"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -146,6 +157,80 @@
             </objects>
             <point key="canvasLocation" x="2139" y="462"/>
         </scene>
+        <!--Add Todo Item Controller-->
+        <scene sceneID="4wo-lM-UDg">
+            <objects>
+                <viewController storyboardIdentifier="addtodoitem" useStoryboardIdentifierAsRestorationIdentifier="YES" id="6ZF-ZM-DrS" customClass="AddTodoItemController" customModule="todoList" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Doa-YB-hyc"/>
+                        <viewControllerLayoutGuide type="bottom" id="gHh-pF-vfG"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="xdd-9k-iMO">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="標題：" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uu9-RW-QIQ">
+                                <rect key="frame" x="40" y="84" width="51" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="sLo-Zx-E3g">
+                                <rect key="frame" x="111" y="80" width="80" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="80" id="5rY-fg-uHp"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="描述：" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jCd-mb-sPK">
+                                <rect key="frame" x="40" y="144" width="51" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="sJK-c3-qya">
+                                <rect key="frame" x="40" y="174" width="520" height="406"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="jCd-mb-sPK" firstAttribute="leading" secondItem="uu9-RW-QIQ" secondAttribute="leading" id="5Fp-Wp-TVd"/>
+                            <constraint firstItem="uu9-RW-QIQ" firstAttribute="top" secondItem="Doa-YB-hyc" secondAttribute="bottom" constant="20" id="6kh-Nx-kbO"/>
+                            <constraint firstItem="uu9-RW-QIQ" firstAttribute="centerY" secondItem="sLo-Zx-E3g" secondAttribute="centerY" id="Hx4-7n-MuY"/>
+                            <constraint firstItem="jCd-mb-sPK" firstAttribute="top" secondItem="uu9-RW-QIQ" secondAttribute="bottom" constant="40" id="MWf-Ym-vTF"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="sJK-c3-qya" secondAttribute="trailing" constant="20" id="RdN-t5-n6U"/>
+                            <constraint firstItem="sJK-c3-qya" firstAttribute="top" secondItem="jCd-mb-sPK" secondAttribute="bottom" constant="10" id="ZPT-Lb-55S"/>
+                            <constraint firstItem="sLo-Zx-E3g" firstAttribute="leading" secondItem="uu9-RW-QIQ" secondAttribute="trailing" constant="20" id="bGA-fz-MXP"/>
+                            <constraint firstItem="uu9-RW-QIQ" firstAttribute="leading" secondItem="xdd-9k-iMO" secondAttribute="leadingMargin" constant="20" id="dS8-tw-lHe"/>
+                            <constraint firstItem="gHh-pF-vfG" firstAttribute="top" secondItem="sJK-c3-qya" secondAttribute="bottom" constant="20" id="dc0-UI-w3A"/>
+                            <constraint firstItem="sJK-c3-qya" firstAttribute="leading" secondItem="jCd-mb-sPK" secondAttribute="leading" id="qi1-nX-Tbg"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="nx1-Zp-TlV">
+                        <barButtonItem key="leftBarButtonItem" image="ic_arrow_back_white" id="mcP-oh-iH0">
+                            <connections>
+                                <action selector="back:" destination="6ZF-ZM-DrS" id="m3P-Vd-knP"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" image="ic_done_white" id="Eok-UM-F2J">
+                            <connections>
+                                <action selector="complete:" destination="6ZF-ZM-DrS" id="6oZ-oW-hKR"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="detailTextField" destination="sJK-c3-qya" id="2y7-s7-ssy"/>
+                        <outlet property="titleTextField" destination="sLo-Zx-E3g" id="hzB-vl-7Ea"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="FYT-fV-bp6" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2849" y="462"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="qeD-U0-9f3">
             <objects>
@@ -154,7 +239,13 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="HNh-SX-oaw">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <color key="barTintColor" red="0.30980392159999998" green="0.72156862749999995" blue="0.62352941179999999" alpha="1" colorSpace="calibratedRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <color key="textShadowColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -167,8 +258,10 @@
         </scene>
     </scenes>
     <resources>
+        <image name="ic_arrow_back_white" width="24" height="24"/>
         <image name="ic_assignment_late" width="24" height="24"/>
         <image name="ic_assignment_turned_in" width="24" height="24"/>
+        <image name="ic_done_white" width="24" height="24"/>
         <image name="ic_menu_white" width="24" height="24"/>
     </resources>
 </document>

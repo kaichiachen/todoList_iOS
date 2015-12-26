@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
@@ -49,5 +50,99 @@
             </connections>
             <point key="canvasLocation" x="1100" y="272"/>
         </view>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="70" id="72M-Ez-Ded" customClass="ListCell" customModule="todoList" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="600" height="151"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="72M-Ez-Ded" id="6fm-eR-qmR">
+                <rect key="frame" x="0.0" y="0.0" width="600" height="150.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dK1-Zk-Ub4">
+                        <rect key="frame" x="0.0" y="0.0" width="460" height="150.5"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xmb-hn-XMv">
+                                <rect key="frame" x="15" y="30" width="430" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Wg-Xe-4gm">
+                                <rect key="frame" x="15" y="5" width="430" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Xmb-hn-XMv" firstAttribute="leading" secondItem="dK1-Zk-Ub4" secondAttribute="leading" constant="15" id="5Hs-88-j6l"/>
+                            <constraint firstItem="Xmb-hn-XMv" firstAttribute="top" secondItem="0Wg-Xe-4gm" secondAttribute="bottom" constant="5" id="Kjh-QS-Izm"/>
+                            <constraint firstItem="0Wg-Xe-4gm" firstAttribute="leading" secondItem="dK1-Zk-Ub4" secondAttribute="leading" constant="15" id="Ute-Ml-t7r"/>
+                            <constraint firstAttribute="trailing" secondItem="Xmb-hn-XMv" secondAttribute="trailing" constant="15" id="YKU-GY-XFt"/>
+                            <constraint firstAttribute="trailing" secondItem="0Wg-Xe-4gm" secondAttribute="trailing" constant="15" id="dWu-Y2-3PT"/>
+                            <constraint firstItem="0Wg-Xe-4gm" firstAttribute="top" secondItem="dK1-Zk-Ub4" secondAttribute="top" constant="5" id="jOd-jU-YJs"/>
+                        </constraints>
+                    </view>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Uxz-6d-0IG">
+                        <rect key="frame" x="460" y="0.0" width="140" height="150.5"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dfc-S2-5xI">
+                                <rect key="frame" x="70" y="0.0" width="70" height="150.5"/>
+                                <color key="backgroundColor" red="0.85043728351593018" green="0.21816034615039825" blue="0.15920260548591614" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="70" id="7Og-n7-8ND"/>
+                                </constraints>
+                                <state key="normal" image="ic_delete_white"/>
+                                <connections>
+                                    <action selector="deleteClick:" destination="72M-Ez-Ded" eventType="touchUpInside" id="bcF-Yp-SsP"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="spE-L7-mrw">
+                                <rect key="frame" x="0.0" y="0.0" width="70" height="150.5"/>
+                                <color key="backgroundColor" red="0.30980392159999998" green="0.72156862749999995" blue="0.62352941179999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="70" id="bjb-9Z-QAz"/>
+                                </constraints>
+                                <state key="normal" image="ic_done_white"/>
+                                <connections>
+                                    <action selector="doneClick:" destination="72M-Ez-Ded" eventType="touchUpInside" id="xgc-5Z-0It"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="Dfc-S2-5xI" secondAttribute="trailing" id="4ze-vC-jXJ"/>
+                            <constraint firstItem="Dfc-S2-5xI" firstAttribute="leading" secondItem="spE-L7-mrw" secondAttribute="trailing" id="5WH-Le-YTR"/>
+                            <constraint firstItem="spE-L7-mrw" firstAttribute="leading" secondItem="Uxz-6d-0IG" secondAttribute="leading" id="6QX-A7-VOi"/>
+                            <constraint firstItem="spE-L7-mrw" firstAttribute="height" secondItem="Dfc-S2-5xI" secondAttribute="height" id="CgR-1u-4K1"/>
+                            <constraint firstAttribute="bottom" secondItem="Dfc-S2-5xI" secondAttribute="bottom" id="YQm-ot-rmO"/>
+                            <constraint firstItem="spE-L7-mrw" firstAttribute="top" secondItem="Uxz-6d-0IG" secondAttribute="top" id="coh-AL-HfX"/>
+                            <constraint firstItem="spE-L7-mrw" firstAttribute="width" secondItem="Dfc-S2-5xI" secondAttribute="width" id="f8N-KV-T01"/>
+                            <constraint firstItem="Dfc-S2-5xI" firstAttribute="top" secondItem="Uxz-6d-0IG" secondAttribute="top" id="xRL-je-353"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="trailingMargin" secondItem="Uxz-6d-0IG" secondAttribute="trailing" constant="-8" id="9eL-cY-oTV"/>
+                    <constraint firstItem="dK1-Zk-Ub4" firstAttribute="top" secondItem="6fm-eR-qmR" secondAttribute="topMargin" constant="-8" id="ANH-CU-Dmg"/>
+                    <constraint firstItem="Uxz-6d-0IG" firstAttribute="leading" secondItem="dK1-Zk-Ub4" secondAttribute="trailing" id="AcP-iG-jvw"/>
+                    <constraint firstItem="dK1-Zk-Ub4" firstAttribute="leading" secondItem="6fm-eR-qmR" secondAttribute="leadingMargin" constant="-8" id="khl-1u-AEb"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="dK1-Zk-Ub4" secondAttribute="bottom" constant="-8" id="pjL-H0-Gqr"/>
+                    <constraint firstItem="Uxz-6d-0IG" firstAttribute="top" secondItem="6fm-eR-qmR" secondAttribute="topMargin" constant="-8" id="vYy-pM-1vo"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="Uxz-6d-0IG" secondAttribute="bottom" constant="-8" id="zSS-kE-kHu"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="cellView" destination="dK1-Zk-Ub4" id="gJx-OD-hDE"/>
+                <outlet property="deleteButtonWidth" destination="7Og-n7-8ND" id="Hew-xE-PXO"/>
+                <outlet property="detail" destination="Xmb-hn-XMv" id="Sdu-Ok-65C"/>
+                <outlet property="title" destination="0Wg-Xe-4gm" id="g7x-7K-hHe"/>
+            </connections>
+            <point key="canvasLocation" x="423" y="742.5"/>
+        </tableViewCell>
     </objects>
+    <resources>
+        <image name="ic_delete_white" width="24" height="24"/>
+        <image name="ic_done_white" width="24" height="24"/>
+    </resources>
 </document>

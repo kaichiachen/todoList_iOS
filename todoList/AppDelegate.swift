@@ -2,6 +2,7 @@ import UIKit
 import FBSDKCoreKit
 import Parse
 import Bolts
+import SlideMenuControllerSwift
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -21,6 +22,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func application(application: UIApplication, openURL url: NSURL, sourceApplication: String?, annotation: AnyObject) -> Bool {
         return FBSDKApplicationDelegate.sharedInstance().application(application, openURL: url, sourceApplication: sourceApplication, annotation: annotation)
+    }
+    
+    func setSlideView(storyBoard:UIStoryboard) -> SlideMenuController {
+        
+        let mainViewController = storyBoard.instantiateViewControllerWithIdentifier("list") as! ListViewController
+        
+        let menuViewController:UIViewController = storyBoard.instantiateViewControllerWithIdentifier("menu") as! MenuViewController
+        
+        let slideMenuController = SlideMenuController(mainViewController:mainViewController, leftMenuViewController: menuViewController)
+        
+        return slideMenuController
+        
     }
     
 

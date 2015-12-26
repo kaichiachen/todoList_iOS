@@ -36,14 +36,15 @@ class TodoRequest{
         }
     }
     
-    static func changeTodoItem(objId:String,title:String, detail:String, finished:(Bool) -> Void){
-        let query:PFQuery = PFQuery(className: "Todo")
+    static func changeTodoItem(objId:String,title:String, detail:String, haveDone:Bool, finished:(Bool) -> Void){
+        let query:PFQuery = PFQuery(className: haveDone ? "havedo":"Todo")
         query.getObjectInBackgroundWithId(objId){
             object in
             let todoObject = object.0!
             todoObject.setObject(title, forKey: "title")
             todoObject.setObject(detail, forKey: "detail")
             todoObject.saveInBackground()
+            finished(true)
         }
     }
     
@@ -67,10 +68,32 @@ class TodoRequest{
         oj.deleteInBackgroundWithBlock(){
             response in
             if response.0 {
-                
+                finished(true)
             } else {
                 
             }
+        }
+    }
+    
+    static func moveToHaveDone(objId:String,finished:(Bool) -> Void){
+        let query:PFQuery = PFQuery(className: "Todo")
+        query.whereKey("objectId", equalTo: (objId ))
+        query.findObjectsInBackgroundWithBlock(){
+            block in
+            if let data = block.0?[0] {
+                let haveDoneobj = TodoData(detail: (data["detail"] as! String), title: (data["title"] as! String), itemId: data.objectId!, haveDone: true)
+                HaveDoneRequest.addHaveDoneItem(haveDoneobj.title, detail: haveDoneobj.detail){
+                    success in
+                    if success {
+                        deleteItem(haveDoneobj.itemId){
+                            success in
+                            finished(success)
+                        }
+                    }
+                }
+            }
+            
+            
         }
     }
 }

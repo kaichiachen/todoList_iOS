@@ -6,14 +6,20 @@ class ListCell:UITableViewCell {
     @IBOutlet weak var title: UILabel!
     @IBOutlet weak var detail: UILabel!
     
+    @IBOutlet weak var finishButton: UIButton!
     
     @IBAction func doneClick(sender: AnyObject) {
-        print(itemId)
+        DataController.shareInstance().finishTodoItem(itemId)
     }
     
     @IBAction func deleteClick(sender: AnyObject) {
-        DataController.shareInstance().deleteTodoItem(itemId)
-        (self.superview?.superview?.superview as! TodoView).deleteItem(index)
+        if todoData.havedone {
+            DataController.shareInstance().deleteHaveDoneItem(itemId)
+            (self.superview?.superview?.superview as! HaveDoneView).deleteItem(index)
+        } else {
+            DataController.shareInstance().deleteTodoItem(itemId)
+            (self.superview?.superview?.superview as! TodoView).deleteItem(index)
+        }
     }
     @IBOutlet weak var deleteButtonWidth: NSLayoutConstraint! {
         didSet{
@@ -27,17 +33,23 @@ class ListCell:UITableViewCell {
     var originWidth:CGFloat = 0
     var itemId:String = ""
     var index:Int = -1
+    var todoData:TodoData!
     func setup(data:TodoData, index:Int) {
         title.text = data.title
         detail.text = data.detail
         itemId = data.itemId
+        self.todoData = data
         self.index = index
-        let gesture = UIPanGestureRecognizer(target: self, action: "scroll:")
-        cellView.addGestureRecognizer(gesture)
+        if todoData.havedone {
+            finishButton.alpha = 0
+        }
+        let gesture = UIScreenEdgePanGestureRecognizer(target: self, action: "scroll:")
+        gesture.edges = UIRectEdge.Right
+        self.addGestureRecognizer(gesture)
     }
     
     func scroll(sender:UIPanGestureRecognizer){
-        let offset = sender.translationInView(self).x * 0.4
+        let offset = sender.translationInView(self).x * (todoData.havedone ? 0.8:0.4)
         switch sender.state {
         case .Began: break
         case .Changed:

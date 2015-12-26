@@ -136,6 +136,7 @@
                 <outlet property="cellView" destination="dK1-Zk-Ub4" id="gJx-OD-hDE"/>
                 <outlet property="deleteButtonWidth" destination="7Og-n7-8ND" id="Hew-xE-PXO"/>
                 <outlet property="detail" destination="Xmb-hn-XMv" id="Sdu-Ok-65C"/>
+                <outlet property="finishButton" destination="spE-L7-mrw" id="roM-64-k3Q"/>
                 <outlet property="title" destination="0Wg-Xe-4gm" id="g7x-7K-hHe"/>
             </connections>
             <point key="canvasLocation" x="423" y="742.5"/>

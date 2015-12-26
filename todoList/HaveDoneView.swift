@@ -6,6 +6,7 @@ class HaveDoneView:UIView, UITableViewDelegate, UITableViewDataSource {
         didSet {
             tableView.delegate = self
             tableView.dataSource = self
+            tableView.scrollEnabled = true
         }
     }
     

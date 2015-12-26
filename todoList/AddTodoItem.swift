@@ -30,17 +30,16 @@ class AddTodoItemController:UIViewController {
         case .add:
             DataController.shareInstance().addTodoItem(titleTextField.text!, detail: detailTextField.text)
         case .edit:
-            DataController.shareInstance().editTodoItem(objid, title: titleTextField.text!, detail: detailTextField.text)
+            DataController.shareInstance().editTodoItem(todoData!.itemId, title: titleTextField.text!, detail: detailTextField.text,haveDone: todoData!.havedone)
         }
-        DataController.shareInstance().getTodoList()
         self.navigationController?.popViewControllerAnimated(true)
     }
     
     var type:HandleType = .add
-    var todoData:TodoData!
+    var todoData:TodoData?
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
-        titleTextField.text = todoData.title
-        detailTextField.text = todoData.detail
+        titleTextField.text = todoData?.title ?? ""
+        detailTextField.text = todoData?.detail ?? ""
     }
 }

@@ -3,6 +3,17 @@ import Parse
 
 
 class HaveDoneRequest{
+    static func addHaveDoneItem(title:String, detail:String, finished:(Bool) -> Void){
+        let todoObject = PFObject(className: "havedo")
+        todoObject["title"] = title
+        todoObject["detail"] = detail
+        todoObject["facebookid"] = DataCache.shareInstance().getUserLoginData().0
+        todoObject.saveInBackgroundWithBlock { (success: Bool, error: NSError?) -> Void in
+            finished(success)
+        }
+    }
+
+    
     static func fetchList(finished:((RequestResponse<[TodoData]>) -> Void)){
         let data = DataCache.shareInstance().getUserLoginData()
         var haveDoneList = [TodoData]()

@@ -26,7 +26,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func setSlideView(storyBoard:UIStoryboard) -> SlideMenuController {
         
-        let mainViewController = storyBoard.instantiateViewControllerWithIdentifier("list") as! ListViewController
+        let mainViewController = storyBoard.instantiateViewControllerWithIdentifier("nav") as! UINavigationController
         
         let menuViewController:UIViewController = storyBoard.instantiateViewControllerWithIdentifier("menu") as! MenuViewController
         

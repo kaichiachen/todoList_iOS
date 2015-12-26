@@ -10,6 +10,7 @@ class TodoView :UIView, UITableViewDataSource, UITableViewDelegate{
         didSet {
             tableView.delegate = self
             tableView.dataSource = self
+            tableView.scrollEnabled = true
         }
     }
     var context:UIViewController!

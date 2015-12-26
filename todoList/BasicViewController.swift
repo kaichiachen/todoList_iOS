@@ -13,6 +13,11 @@ class BasicViewController: UIViewController, DataProtocol {
     func fetchedToDo(data:[TodoData]){
         NSNotificationCenter.defaultCenter().postNotificationName("recieve todo data", object: nil, userInfo: ["data":data])
     }
+    
+    func finishTodoItem() {
+        DataController.shareInstance().getTodoList()
+        DataController.shareInstance().getHaveDoneList()
+    }
     func fetchedDataFail(type:DataType,error:String){
         
     }

@@ -21,7 +21,7 @@ public class DataController{
             response in
             dispatch_async(dispatch_get_main_queue()) {
                 if response {
-                    
+                    DataController.shareInstance().getTodoList()
                 } else {
                     
                 }
@@ -29,12 +29,16 @@ public class DataController{
         }
     }
     
-    func editTodoItem(objid:String, title:String, detail:String){
-        TodoRequest.changeTodoItem(objid, title: title,detail: detail){
+    func editTodoItem(objid:String, title:String, detail:String, haveDone:Bool){
+        TodoRequest.changeTodoItem(objid, title: title,detail: detail,haveDone: haveDone){
             response in
             dispatch_async(dispatch_get_main_queue()) {
                 if response {
-                    
+                    if haveDone {
+                        DataController.shareInstance().getHaveDoneList()
+                    } else {
+                        DataController.shareInstance().getTodoList()
+                    }
                 } else {
                     
                 }
@@ -97,6 +101,15 @@ public class DataController{
     }
     
     func finishTodoItem(objId:String){
-        
+        TodoRequest.moveToHaveDone(objId){
+            response in
+            dispatch_async(dispatch_get_main_queue()) {
+                if response {
+                    self.dataSource?.finishTodoItem()
+                } else {
+                    
+                }
+            }
+        }
     }
 }

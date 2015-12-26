@@ -19,7 +19,7 @@
 		A135E2041C2E5DEE0062CF11 /* ListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A135E2031C2E5DEE0062CF11 /* ListCell.swift */; };
 		A135E2061C2E704F0062CF11 /* HaveDoneRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A135E2051C2E704F0062CF11 /* HaveDoneRequest.swift */; };
 		A1ED6C6A1C2A7F3A003A394F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1ED6C691C2A7F3A003A394F /* AppDelegate.swift */; };
-		A1ED6C6C1C2A7F3A003A394F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1ED6C6B1C2A7F3A003A394F /* ViewController.swift */; };
+		A1ED6C6C1C2A7F3A003A394F /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1ED6C6B1C2A7F3A003A394F /* LoginViewController.swift */; };
 		A1ED6C6F1C2A7F3A003A394F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A1ED6C6D1C2A7F3A003A394F /* Main.storyboard */; };
 		A1ED6C711C2A7F3A003A394F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A1ED6C701C2A7F3A003A394F /* Assets.xcassets */; };
 		A1ED6C841C2A7F92003A394F /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A1ED6C821C2A7F92003A394F /* FBSDKCoreKit.framework */; };
@@ -59,7 +59,7 @@
 		A135E2051C2E704F0062CF11 /* HaveDoneRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HaveDoneRequest.swift; sourceTree = "<group>"; };
 		A1ED6C661C2A7F3A003A394F /* todoList.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = todoList.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A1ED6C691C2A7F3A003A394F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		A1ED6C6B1C2A7F3A003A394F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		A1ED6C6B1C2A7F3A003A394F /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		A1ED6C6E1C2A7F3A003A394F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A1ED6C701C2A7F3A003A394F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = todoList/Assets.xcassets; sourceTree = "<group>"; };
 		A1ED6C751C2A7F3A003A394F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = todoList/Info.plist; sourceTree = "<group>"; };
@@ -215,7 +215,7 @@
 		A1ED6CA91C2ACEA8003A394F /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
-				A1ED6C6B1C2A7F3A003A394F /* ViewController.swift */,
+				A1ED6C6B1C2A7F3A003A394F /* LoginViewController.swift */,
 				A1ED6C881C2A8FF1003A394F /* ListViewController.swift */,
 				A135E1EF1C2DAB610062CF11 /* MenuViewController.swift */,
 				A135E1F61C2DB9D10062CF11 /* BasicViewController.swift */,
@@ -394,7 +394,7 @@
 				A135E2041C2E5DEE0062CF11 /* ListCell.swift in Sources */,
 				A1ED6CA81C2ACC3C003A394F /* Utils.swift in Sources */,
 				A135E2061C2E704F0062CF11 /* HaveDoneRequest.swift in Sources */,
-				A1ED6C6C1C2A7F3A003A394F /* ViewController.swift in Sources */,
+				A1ED6C6C1C2A7F3A003A394F /* LoginViewController.swift in Sources */,
 				A1ED6CB21C2ACFA4003A394F /* HaveDoneView.swift in Sources */,
 				A135E1F51C2DB97E0062CF11 /* Constants.swift in Sources */,
 				A135E1F71C2DB9D10062CF11 /* BasicViewController.swift in Sources */,

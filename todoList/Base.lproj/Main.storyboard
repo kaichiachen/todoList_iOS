@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15A279b" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Yt8-16-WWN">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15A279b" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Login View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="todoList" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="LoginViewController" customModule="todoList" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -17,7 +17,19 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ToDoList" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5aI-5O-3IB">
+                                <rect key="frame" x="248.5" y="60" width="103" height="32.5"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="5aI-5O-3IB" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="hvQ-gb-eQ4"/>
+                            <constraint firstItem="5aI-5O-3IB" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="40" id="yi4-cw-A7E"/>
+                        </constraints>
                     </view>
                     <connections>
                         <segue destination="Yt8-16-WWN" kind="show" identifier="main" id="Jsv-XM-Ogf"/>
@@ -176,10 +188,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="sLo-Zx-E3g">
-                                <rect key="frame" x="111" y="80" width="80" height="30"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="80" id="5rY-fg-uHp"/>
-                                </constraints>
+                                <rect key="frame" x="111" y="80" width="449" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
@@ -200,6 +209,7 @@
                         <constraints>
                             <constraint firstItem="jCd-mb-sPK" firstAttribute="leading" secondItem="uu9-RW-QIQ" secondAttribute="leading" id="5Fp-Wp-TVd"/>
                             <constraint firstItem="uu9-RW-QIQ" firstAttribute="top" secondItem="Doa-YB-hyc" secondAttribute="bottom" constant="20" id="6kh-Nx-kbO"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="sLo-Zx-E3g" secondAttribute="trailing" constant="20" id="CvE-8e-ddB"/>
                             <constraint firstItem="uu9-RW-QIQ" firstAttribute="centerY" secondItem="sLo-Zx-E3g" secondAttribute="centerY" id="Hx4-7n-MuY"/>
                             <constraint firstItem="jCd-mb-sPK" firstAttribute="top" secondItem="uu9-RW-QIQ" secondAttribute="bottom" constant="40" id="MWf-Ym-vTF"/>
                             <constraint firstAttribute="trailingMargin" secondItem="sJK-c3-qya" secondAttribute="trailing" constant="20" id="RdN-t5-n6U"/>
@@ -234,7 +244,7 @@
         <!--Navigation Controller-->
         <scene sceneID="qeD-U0-9f3">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Yt8-16-WWN" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="nav" automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Yt8-16-WWN" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="HNh-SX-oaw">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>

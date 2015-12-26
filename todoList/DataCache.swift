@@ -16,6 +16,7 @@ public class DataCache {
     public func setUserLoginData(id:String,token:String) {
         userDefaults.setObject(token ?? "",forKey:"UserToken")
         userDefaults.setObject(id ?? "",forKey:"UserId")
+        userDefaults.setObject(true ?? "",forKey:"UserLogin")
         userDefaults.synchronize()
     }
     
@@ -24,6 +25,10 @@ public class DataCache {
         let token = userDefaults.objectForKey("UserToken") as? String
         let id = userDefaults.objectForKey("UserId") as? String
         return (id ?? "", token ?? "")
+    }
+    
+    public func isLogin() -> Bool {
+        return userDefaults.objectForKey("UserLogin") as? Bool ?? false
     }
     
     public func setUserPersonalInfo(name:String, dep:String){

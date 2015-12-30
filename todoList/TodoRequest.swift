@@ -1,7 +1,7 @@
 import Foundation
 import Parse
 
-public class TodoData : AnyObject,NSCopying{
+public class TodoData : AnyObject{
     var detail:String!
     var title:String!
     var itemId:String!
@@ -20,8 +20,8 @@ public class TodoData : AnyObject,NSCopying{
         self.havedone = haveDone
     }
     
-    @objc public func copyWithZone(zone: NSZone) -> AnyObject {
-        return TodoData(detail: detail, title: title,itemId: itemId)
+    func copy() -> TodoData{
+        return TodoData(detail: detail, title: title,itemId: itemId,haveDone: havedone)
     }
 }
 

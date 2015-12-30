@@ -43,10 +43,13 @@ class ListCell:UITableViewCell {
         if todoData.havedone {
             finishButton.alpha = 0
         }
-        let gesture = UIScreenEdgePanGestureRecognizer(target: self, action: "scroll:")
-        gesture.edges = UIRectEdge.Right
-        self.addGestureRecognizer(gesture)
+        let screenEdgePanGesture = UIScreenEdgePanGestureRecognizer(target: self, action: "scroll:")
+        screenEdgePanGesture.edges = UIRectEdge.Right
+        self.addGestureRecognizer(screenEdgePanGesture)
+        cellPanGesture = UIScreenEdgePanGestureRecognizer(target: self, action: "scroll:")
     }
+    
+    var cellPanGesture:UIScreenEdgePanGestureRecognizer!
     
     func scroll(sender:UIPanGestureRecognizer){
         let offset = sender.translationInView(self).x * (todoData.havedone ? 0.8:0.4)
@@ -64,8 +67,10 @@ class ListCell:UITableViewCell {
         case .Ended:
             if deleteButtonWidth.constant > maxWidth/2 {
                 deleteButtonWidth.constant = maxWidth
+                self.addGestureRecognizer(cellPanGesture)
             } else {
                 deleteButtonWidth.constant = minWidth
+                self.removeGestureRecognizer(cellPanGesture)
             }
             UIView.animateWithDuration(0.3, animations: {
                 self.layoutIfNeeded()

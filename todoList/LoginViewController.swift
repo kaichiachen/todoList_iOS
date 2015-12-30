@@ -19,7 +19,6 @@ class LoginViewController: UIViewController {
             loginButton.layer.masksToBounds = true
             loginButton.layer.cornerRadius = 5
             loginButton.setTitle("Facebook Login", forState: UIControlState.Normal)
-            
             loginButton.addTarget(self, action: "click", forControlEvents: UIControlEvents.TouchUpInside)
             return loginButton
         }()
@@ -27,9 +26,9 @@ class LoginViewController: UIViewController {
         self.view.addSubview(loginButton)
     }
     
-    override func viewDidAppear(animated: Bool) {
+    override func viewWillAppear(animated: Bool) {
         super.viewDidAppear(animated)
-        if token != nil || DataCache.shareInstance().isLogin(){
+        if DataCache.shareInstance().isLogin(){
             self.performSegueWithIdentifier("main", sender: self)
         }
     }
@@ -58,44 +57,8 @@ class LoginViewController: UIViewController {
     
     func fetchUserData(){
         if (FBSDKAccessToken.currentAccessToken() != nil) {
-            FBSDKGraphRequest(graphPath: "me", parameters: nil).startWithCompletionHandler(){
-                connection,result,error in
-                if (error != nil) {
-                    print("error: \(error)")
-                } else {
-                    let id = result["id"] as! String
-                    let name = result["name"]
-                    print("result: \(id)")
-                    
-                    let query:PFQuery = PFQuery(className: "User")
-                    do {
-                        let object:NSArray = try query.findObjects()
-                        PFObject.pinAllInBackground(object as? [PFObject])
-                        query.fromLocalDatastore()
-                        query.whereKey("facebookid", equalTo: (id ))
-                        query.findObjectsInBackgroundWithBlock(){
-                            block in
-                            if block.0!.count == 0 {
-                                let userObject = PFObject(className: "User")
-                                userObject["facebookid"] = "\((id ))"
-                                userObject["username"] = "\((name as! String))"
-                                userObject.saveInBackgroundWithBlock { (success: Bool, error: NSError?) -> Void in
-                                }
-                            }
-                            
-                        }
-                    } catch _ {
-                        
-                    }
-                    DataCache.shareInstance().setUserLoginData(id, token: self.token!)
-                }
-            }
+            DataController.shareInstance().login()
         }
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
 }
 

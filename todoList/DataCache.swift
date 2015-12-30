@@ -13,10 +13,9 @@ public class DataCache {
         return dataCache!
     }
     
-    public func setUserLoginData(id:String,token:String) {
-        userDefaults.setObject(token ?? "",forKey:"UserToken")
+    public func setUserLoginData(id:String) {
         userDefaults.setObject(id ?? "",forKey:"UserId")
-        userDefaults.setObject(true ?? "",forKey:"UserLogin")
+        userDefaults.setObject(true,forKey:"UserLogin")
         userDefaults.synchronize()
     }
     
@@ -31,20 +30,18 @@ public class DataCache {
         return userDefaults.objectForKey("UserLogin") as? Bool ?? false
     }
     
-    public func setUserPersonalInfo(name:String, dep:String){
+    public func setUserPersonalInfo(name:String){
         userDefaults.setObject(name,forKey:"UserName")
-        userDefaults.setObject(dep,forKey:"UserDep")
         userDefaults.synchronize()
     }
     
-    public func getUserPersonalInfo() -> (String,String) {
+    public func getUserPersonalInfo() -> String {
         let name = userDefaults.objectForKey("UserName") as? String ?? ""
-        let dep = userDefaults.objectForKey("UserDep") as? String ?? ""
-        return (name,dep)
+        return name
     }
     
-    
-    
-    
-    
+    public func logout(){
+        userDefaults.setObject(false,forKey:"UserLogin")
+        userDefaults.synchronize()
+    }
 }

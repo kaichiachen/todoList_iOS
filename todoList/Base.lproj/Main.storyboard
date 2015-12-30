@@ -9,7 +9,7 @@
         <!--Login View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="LoginViewController" customModule="todoList" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="login" useStoryboardIdentifierAsRestorationIdentifier="YES" id="BYZ-38-t0r" customClass="LoginViewController" customModule="todoList" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -52,11 +52,11 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ojU-FW-e5V">
-                                <rect key="frame" x="35" y="70.5" width="530" height="529.5"/>
+                                <rect key="frame" x="35" y="90.5" width="530" height="509.5"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </tableView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oDN-RX-SfQ">
-                                <rect key="frame" x="35" y="20" width="45" height="20.5"/>
+                                <rect key="frame" x="35" y="40" width="45" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
@@ -69,9 +69,13 @@
                             <constraint firstItem="5R5-Gn-wMH" firstAttribute="top" secondItem="ojU-FW-e5V" secondAttribute="bottom" id="9la-FY-zdb"/>
                             <constraint firstItem="oDN-RX-SfQ" firstAttribute="leading" secondItem="2YC-gd-pXb" secondAttribute="leadingMargin" constant="15" id="aCB-Du-e3e"/>
                             <constraint firstItem="ojU-FW-e5V" firstAttribute="top" secondItem="oDN-RX-SfQ" secondAttribute="bottom" constant="30" id="aG4-i6-Ya5"/>
-                            <constraint firstItem="oDN-RX-SfQ" firstAttribute="top" secondItem="Ose-UT-42Q" secondAttribute="bottom" id="qZr-kF-cqr"/>
+                            <constraint firstItem="oDN-RX-SfQ" firstAttribute="top" secondItem="Ose-UT-42Q" secondAttribute="bottom" constant="20" id="qZr-kF-cqr"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="tableView" destination="ojU-FW-e5V" id="qa0-oz-Svc"/>
+                        <outlet property="userName" destination="oDN-RX-SfQ" id="UPm-t2-tKt"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="H9B-Wa-Pkd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

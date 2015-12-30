@@ -1,4 +1,5 @@
 import Foundation
+import FBSDKLoginKit
 
 public class DataController{
     private static var dataManager:DataController?
@@ -14,6 +15,19 @@ public class DataController{
         }
         lockObject.unlock()
         return dataManager!
+    }
+    
+    func login() {
+        LoginRequest.execute(){ response in
+            dispatch_async(dispatch_get_main_queue()) {
+                switch response {
+                case let .Success(data):
+                    self.dataSource?.loginSuccess(data)
+                case let .Error(error):
+                    self.dataSource?.fetchedDataFail(.ToDo, error: error)
+                }
+            }
+        }
     }
     
     func addTodoItem(title:String, detail:String){

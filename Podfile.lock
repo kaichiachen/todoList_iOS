@@ -2,17 +2,20 @@ PODS:
   - ChameleonFramework/Default (2.0.6)
   - ChameleonFramework/Swift (2.0.6):
     - ChameleonFramework/Default
+  - Nimble (3.0.0)
+  - Quick (0.8.0)
   - SlideMenuControllerSwift (2.0.5)
-  - SWTableViewCell (0.3.7)
 
 DEPENDENCIES:
   - ChameleonFramework/Swift
+  - Nimble
+  - Quick
   - SlideMenuControllerSwift
-  - SWTableViewCell
 
 SPEC CHECKSUMS:
   ChameleonFramework: a6b466873ff9a4ce3a5196c20bccf1a97ad9f446
+  Nimble: 4c353d43735b38b545cbb4cb91504588eb5de926
+  Quick: 563d0f6ec5f72e394645adb377708639b7dd38ab
   SlideMenuControllerSwift: 9dcae36265e14c4f42e729f212463beb60d2cf96
-  SWTableViewCell: 2a94aadc9d47b2b611fa064566bf57948b95b579
 
 COCOAPODS: 0.39.0

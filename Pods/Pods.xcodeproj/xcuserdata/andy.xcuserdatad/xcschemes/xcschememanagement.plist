@@ -9,12 +9,22 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>Pods.xcscheme</key>
+		<key>Nimble.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>SWTableViewCell.xcscheme</key>
+		<key>Pods-todoList.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Pods-todoListTests.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Quick.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -27,22 +37,32 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>160BEB83B8114B712D331680664BCD08</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>20564F913C3964AE292975038EE9EBBF</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>2CDEAC1B2596659D9550738B2D824C42</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
 		<key>5172ACAB7FEA22813859DC97CA0AA16F</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>85C8879AB5E29F826F0A097AB38D1173</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>AA2B5965B40903D72391CA56F7D8BE92</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>C5DB5104FED3C10F78978AFC810982B9</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>D7035C2DF4394F0BD7DE087D15625DE3</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>F1CA12EB8429AA179998A2550CCDAE0E</key>
 		<dict>
 			<key>primary</key>
 			<true/>

@@ -20,9 +20,18 @@ class TodoDataSpec: QuickSpec {
                 expect(todoData.title).to(equal("do homework"))
                 expect(todoData.detail).to(equal("a hard homework"))
                 expect(todoData.havedone).to(equal(false))
-                let duplicate = todoData.copy()
+                let duplicate = todoData.copy() as! TodoData
                 duplicate.title = "buy dinner"
                 expect(todoData.title).notTo(equal(duplicate.title))
+            }
+            it("should init with HaveDoneData correctly"){
+                let haveDoneData = TodoData(detail: "a hard homework",title: "do homework",itemId: "0bf67de",haveDone: true)
+                expect(haveDoneData.title).to(equal("do homework"))
+                expect(haveDoneData.detail).to(equal("a hard homework"))
+                expect(haveDoneData.havedone).to(equal(false))
+                let duplicate = haveDoneData.copy() as! TodoData
+                duplicate.title = "buy dinner"
+                expect(haveDoneData.title).notTo(equal(duplicate.title))
             }
         }
     }

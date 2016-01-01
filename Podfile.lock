@@ -2,19 +2,25 @@ PODS:
   - ChameleonFramework/Default (2.0.6)
   - ChameleonFramework/Swift (2.0.6):
     - ChameleonFramework/Default
+  - GCNetworkReachability (1.3.2)
   - Nimble (3.0.0)
+  - NVActivityIndicatorView (2.3)
   - Quick (0.8.0)
   - SlideMenuControllerSwift (2.0.5)
 
 DEPENDENCIES:
   - ChameleonFramework/Swift
+  - GCNetworkReachability
   - Nimble
+  - NVActivityIndicatorView
   - Quick
   - SlideMenuControllerSwift
 
 SPEC CHECKSUMS:
   ChameleonFramework: a6b466873ff9a4ce3a5196c20bccf1a97ad9f446
+  GCNetworkReachability: 2a7dd53d362220326b3e38df68c91b3ef84418d1
   Nimble: 4c353d43735b38b545cbb4cb91504588eb5de926
+  NVActivityIndicatorView: c7ef25ef527ab5e51b00322cb1ddd58681bcf2a3
   Quick: 563d0f6ec5f72e394645adb377708639b7dd38ab
   SlideMenuControllerSwift: 9dcae36265e14c4f42e729f212463beb60d2cf96
 

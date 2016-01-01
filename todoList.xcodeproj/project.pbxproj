@@ -21,6 +21,8 @@
 		A135E2061C2E704F0062CF11 /* HaveDoneRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A135E2051C2E704F0062CF11 /* HaveDoneRequest.swift */; };
 		A188D02F1C33BC56001CB38B /* LoginRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A188D02E1C33BC56001CB38B /* LoginRequest.swift */; };
 		A188D0431C340687001CB38B /* TodoDataSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = A188D0421C340687001CB38B /* TodoDataSpec.swift */; };
+		A19A44A61C3552770072ACFC /* DataCacheTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A19A44A51C3552760072ACFC /* DataCacheTest.swift */; };
+		A19A44AB1C3559260072ACFC /* NSObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = A19A44AA1C3559260072ACFC /* NSObject.swift */; };
 		A1ED6C6A1C2A7F3A003A394F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1ED6C691C2A7F3A003A394F /* AppDelegate.swift */; };
 		A1ED6C6C1C2A7F3A003A394F /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1ED6C6B1C2A7F3A003A394F /* LoginViewController.swift */; };
 		A1ED6C6F1C2A7F3A003A394F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A1ED6C6D1C2A7F3A003A394F /* Main.storyboard */; };
@@ -80,6 +82,8 @@
 		A188D0421C340687001CB38B /* TodoDataSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoDataSpec.swift; sourceTree = "<group>"; };
 		A188D0441C340687001CB38B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A194D35C26B8937FE30A0B40 /* Pods-todoListTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-todoListTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-todoListTests/Pods-todoListTests.release.xcconfig"; sourceTree = "<group>"; };
+		A19A44A51C3552760072ACFC /* DataCacheTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataCacheTest.swift; sourceTree = "<group>"; };
+		A19A44AA1C3559260072ACFC /* NSObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSObject.swift; sourceTree = "<group>"; };
 		A1ED6C661C2A7F3A003A394F /* todoList.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = todoList.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A1ED6C691C2A7F3A003A394F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A1ED6C6B1C2A7F3A003A394F /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -201,8 +205,17 @@
 			children = (
 				A188D0421C340687001CB38B /* TodoDataSpec.swift */,
 				A188D0441C340687001CB38B /* Info.plist */,
+				A19A44A51C3552760072ACFC /* DataCacheTest.swift */,
 			);
 			path = todoListTests;
+			sourceTree = "<group>";
+		};
+		A19A44A91C3558D20072ACFC /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				A19A44AA1C3559260072ACFC /* NSObject.swift */,
+			);
+			name = Extension;
 			sourceTree = "<group>";
 		};
 		A1ED6C5D1C2A7F3A003A394F = {
@@ -230,6 +243,7 @@
 		A1ED6C681C2A7F3A003A394F /* todoList */ = {
 			isa = PBXGroup;
 			children = (
+				A19A44A91C3558D20072ACFC /* Extension */,
 				A135E1F11C2DB8D60062CF11 /* Network */,
 				A1ED6CAB1C2ACEE5003A394F /* Utils */,
 				A1ED6CAA1C2ACEC2003A394F /* UI */,
@@ -515,6 +529,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A19A44A61C3552770072ACFC /* DataCacheTest.swift in Sources */,
 				A188D0431C340687001CB38B /* TodoDataSpec.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -540,6 +555,7 @@
 				A1ED6C6A1C2A7F3A003A394F /* AppDelegate.swift in Sources */,
 				A1ED6C871C2A8F38003A394F /* DataCache.swift in Sources */,
 				A135E1FD1C2DBA4E0062CF11 /* DataController.swift in Sources */,
+				A19A44AB1C3559260072ACFC /* NSObject.swift in Sources */,
 				A135E1F01C2DAB610062CF11 /* MenuViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

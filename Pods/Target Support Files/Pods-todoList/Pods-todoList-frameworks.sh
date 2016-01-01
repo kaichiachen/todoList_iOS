@@ -85,9 +85,13 @@ strip_invalid_archs() {
 
 if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "Pods-todoList/ChameleonFramework.framework"
+  install_framework "Pods-todoList/GCNetworkReachability.framework"
+  install_framework "Pods-todoList/NVActivityIndicatorView.framework"
   install_framework "Pods-todoList/SlideMenuControllerSwift.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "Pods-todoList/ChameleonFramework.framework"
+  install_framework "Pods-todoList/GCNetworkReachability.framework"
+  install_framework "Pods-todoList/NVActivityIndicatorView.framework"
   install_framework "Pods-todoList/SlideMenuControllerSwift.framework"
 fi

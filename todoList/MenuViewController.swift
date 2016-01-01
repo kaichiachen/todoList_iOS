@@ -1,5 +1,4 @@
 import UIKit
-import FBSDKLoginKit
 
 class MenuViewController:BasicViewController, UITableViewDataSource, UITableViewDelegate {
     
@@ -7,13 +6,31 @@ class MenuViewController:BasicViewController, UITableViewDataSource, UITableView
         didSet {
             tableView.dataSource = self
             tableView.delegate = self
+            tableView.separatorStyle = .None
+            tableView.showsHorizontalScrollIndicator = false
+            tableView.showsVerticalScrollIndicator = false
+        }
+    }
+    
+    
+    @IBOutlet weak var profileImage: UIImageView! {
+        didSet {
+            profileImage.layer.masksToBounds = true
+            profileImage.layer.cornerRadius = profileImage.frame.width/2
         }
     }
     @IBOutlet weak var userName: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        userName.text = DataCache.shareInstance().getUserPersonalInfo()
+        let personalData = DataCache.shareInstance().getUserPersonalInfo()
+        userName.text = personalData.0
+        profileImage.image = UIImage(data: personalData.1)
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+        
     }
     
     let menuTextList = ["登出"]
@@ -21,18 +38,13 @@ class MenuViewController:BasicViewController, UITableViewDataSource, UITableView
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         switch indexPath.row {
-        case 0:
-            FBSDKLoginManager().logOut()
-            FBSDKAccessToken.setCurrentAccessToken(nil)
-            let vc = self.storyboard?.instantiateViewControllerWithIdentifier("login") as! LoginViewController
-            UIApplication.sharedApplication().keyWindow?.rootViewController?.dismissViewControllerAnimated(false, completion: nil)
-            UIApplication.sharedApplication().keyWindow?.rootViewController = vc
+        case 0: logout()
         default: break
         }
     }
     
     func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return 50
+        return 0
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -43,6 +55,7 @@ class MenuViewController:BasicViewController, UITableViewDataSource, UITableView
         let cell = UITableViewCell()
         cell.textLabel?.text = menuTextList[indexPath.row]
         cell.imageView?.image = UIImage(named: menuIconList[indexPath.row])
+        cell.selectionStyle = .None
         return cell
     }
 }

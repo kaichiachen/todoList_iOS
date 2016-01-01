@@ -1,5 +1,6 @@
 import UIKit
 import Parse
+import FBSDKLoginKit
 
 class BasicViewController: UIViewController, DataProtocol {
     
@@ -9,31 +10,7 @@ class BasicViewController: UIViewController, DataProtocol {
     }
     
     func loginSuccess(data: NSDictionary) {
-        let id = data["id"] as! String
-        let name = data["name"] as! String
-        
-        let query:PFQuery = PFQuery(className: "User")
-        do {
-            let object:NSArray = try query.findObjects()
-            PFObject.pinAllInBackground(object as? [PFObject])
-            query.fromLocalDatastore()
-            query.whereKey("facebookid", equalTo: (id ))
-            query.findObjectsInBackgroundWithBlock(){
-                block in
-                if block.0!.count == 0 {
-                    let userObject = PFObject(className: "User")
-                    userObject["facebookid"] = "\((id ))"
-                    userObject["username"] = "\((name ))"
-                    userObject.saveInBackgroundWithBlock { (success: Bool, error: NSError?) -> Void in
-                    }
-                }
-                
-            }
-        } catch _ {
-            
-        }
-        DataCache.shareInstance().setUserLoginData(id)
-        DataCache.shareInstance().setUserPersonalInfo(name)
+        Log("Login Success!")
     }
     
     func fetchedHaveDone(data:[TodoData]){
@@ -43,16 +20,34 @@ class BasicViewController: UIViewController, DataProtocol {
         NSNotificationCenter.defaultCenter().postNotificationName("recieve todo data", object: nil, userInfo: ["data":data])
     }
     
+    /**
+     transfer todo item to have done item
+     */
     func finishTodoItem() {
         DataController.shareInstance().getTodoList()
         DataController.shareInstance().getHaveDoneList()
     }
+    
     func fetchedDataFail(type:DataType,error:String){
-        
+        Log("\(type): error")
+        let alert = UIAlertController(title: "錯誤", message: "網路或伺服器有問題", preferredStyle: UIAlertControllerStyle.Alert)
+        alert.addAction(UIAlertAction(title: "確定", style: UIAlertActionStyle.Default, handler: nil))
+        self.presentViewController(alert, animated: true, completion: nil)
+    }
+    
+    func logout() {
+        NSNotificationCenter.defaultCenter().postNotification(NSNotification(name: "logout", object: nil))
+        DataCache.shareInstance().logout()
+        FBSDKLoginManager().logOut()
+        FBSDKAccessToken.setCurrentAccessToken(nil)
+        let vc = self.storyboard?.instantiateViewControllerWithIdentifier("login") as! LoginViewController
+        UIApplication.sharedApplication().keyWindow?.rootViewController?.dismissViewControllerAnimated(false, completion: nil)
+        UIApplication.sharedApplication().keyWindow?.rootViewController = vc
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
+        Log("didReceiveMemoryWarning")
         if (self.view.window == nil) {
             self.view = nil
         }

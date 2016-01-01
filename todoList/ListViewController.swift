@@ -21,6 +21,7 @@ class ListViewController: BasicViewController ,UIScrollViewDelegate {
         }
     }
     
+
     @IBAction func toDoButton(sender: AnyObject) {
         mainScrollView.setContentOffset(CGPoint(x: 0,y: 0), animated: true)
         greenBarLeading.constant = -20
@@ -36,7 +37,8 @@ class ListViewController: BasicViewController ,UIScrollViewDelegate {
             self.view.layoutIfNeeded()
         })
     }
-    var UIViewList = [UIView]()
+
+    var UIViewList = [UIView]() /// todo and havedone view
     var pageWidth:CGFloat = 1
     var pageHeight:CGFloat = 0
     
@@ -53,6 +55,10 @@ class ListViewController: BasicViewController ,UIScrollViewDelegate {
         } else {
             initialize = true
         }
+        
+        /**
+        *  set todo and havedone list view
+        */
         pageWidth = mainScrollView.frame.width
         pageHeight = mainScrollView.frame.height
         for i in 0..<2 {

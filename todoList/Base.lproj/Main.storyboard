@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15A279b" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
@@ -19,7 +18,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ToDoList" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5aI-5O-3IB">
-                                <rect key="frame" x="248.5" y="60" width="103" height="32.5"/>
+                                <rect key="frame" x="248.5" y="140" width="103" height="32.5"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
@@ -28,10 +27,11 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="5aI-5O-3IB" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="hvQ-gb-eQ4"/>
-                            <constraint firstItem="5aI-5O-3IB" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="40" id="yi4-cw-A7E"/>
+                            <constraint firstItem="5aI-5O-3IB" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="120" id="yi4-cw-A7E"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="loginTitleHeight" destination="yi4-cw-A7E" id="bt2-49-1Zv"/>
                         <segue destination="Yt8-16-WWN" kind="show" identifier="main" id="Jsv-XM-Ogf"/>
                     </connections>
                 </viewController>
@@ -52,11 +52,18 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ojU-FW-e5V">
-                                <rect key="frame" x="35" y="90.5" width="530" height="509.5"/>
+                                <rect key="frame" x="35" y="160" width="530" height="440"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </tableView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="gpf-9D-fbQ">
+                                <rect key="frame" x="35" y="50" width="60" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="R1u-n1-94T"/>
+                                    <constraint firstAttribute="width" constant="60" id="iy6-2K-oAi"/>
+                                </constraints>
+                            </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oDN-RX-SfQ">
-                                <rect key="frame" x="35" y="40" width="45" height="20.5"/>
+                                <rect key="frame" x="125" y="69.5" width="45" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
@@ -66,13 +73,16 @@
                         <constraints>
                             <constraint firstAttribute="trailingMargin" secondItem="ojU-FW-e5V" secondAttribute="trailing" constant="15" id="0N3-N8-9uw"/>
                             <constraint firstItem="ojU-FW-e5V" firstAttribute="leading" secondItem="2YC-gd-pXb" secondAttribute="leadingMargin" constant="15" id="10S-vl-21n"/>
+                            <constraint firstItem="gpf-9D-fbQ" firstAttribute="leading" secondItem="2YC-gd-pXb" secondAttribute="leadingMargin" constant="15" id="21S-Ma-IC8"/>
+                            <constraint firstItem="gpf-9D-fbQ" firstAttribute="top" secondItem="Ose-UT-42Q" secondAttribute="bottom" constant="30" id="8pf-uZ-uNU"/>
+                            <constraint firstItem="oDN-RX-SfQ" firstAttribute="centerY" secondItem="gpf-9D-fbQ" secondAttribute="centerY" id="9TC-Yb-56d"/>
                             <constraint firstItem="5R5-Gn-wMH" firstAttribute="top" secondItem="ojU-FW-e5V" secondAttribute="bottom" id="9la-FY-zdb"/>
-                            <constraint firstItem="oDN-RX-SfQ" firstAttribute="leading" secondItem="2YC-gd-pXb" secondAttribute="leadingMargin" constant="15" id="aCB-Du-e3e"/>
-                            <constraint firstItem="ojU-FW-e5V" firstAttribute="top" secondItem="oDN-RX-SfQ" secondAttribute="bottom" constant="30" id="aG4-i6-Ya5"/>
-                            <constraint firstItem="oDN-RX-SfQ" firstAttribute="top" secondItem="Ose-UT-42Q" secondAttribute="bottom" constant="20" id="qZr-kF-cqr"/>
+                            <constraint firstItem="oDN-RX-SfQ" firstAttribute="leading" secondItem="gpf-9D-fbQ" secondAttribute="trailing" constant="30" id="O3e-58-KEx"/>
+                            <constraint firstItem="ojU-FW-e5V" firstAttribute="top" secondItem="gpf-9D-fbQ" secondAttribute="bottom" constant="50" id="TEu-gS-Zn0"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="profileImage" destination="gpf-9D-fbQ" id="ilE-am-gxV"/>
                         <outlet property="tableView" destination="ojU-FW-e5V" id="qa0-oz-Svc"/>
                         <outlet property="userName" destination="oDN-RX-SfQ" id="UPm-t2-tKt"/>
                     </connections>
@@ -160,7 +170,7 @@
                             <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <connections>
                                 <action selector="addTodoList:" destination="bIB-4P-7qA" id="mDs-Al-2DA"/>
-                                <segue destination="6ZF-ZM-DrS" kind="push" id="8tf-7M-mbV"/>
+                                <segue destination="6ZF-ZM-DrS" kind="show" id="8tf-7M-mbV"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>

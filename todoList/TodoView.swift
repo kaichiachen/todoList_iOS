@@ -1,5 +1,4 @@
 import UIKit
-import SWTableViewCell
 import ChameleonFramework
 
 class TodoView :UIView, UITableViewDataSource, UITableViewDelegate{

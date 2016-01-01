@@ -24,8 +24,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         return FBSDKApplicationDelegate.sharedInstance().application(application, openURL: url, sourceApplication: sourceApplication, annotation: annotation)
     }
     
+    /**
+     set slide menu function
+     
+     - parameter storyBoard: storyboard
+     
+     - returns: slide menu controller
+     */
     func setSlideView(storyBoard:UIStoryboard) -> SlideMenuController {
-        
+        SlideMenuOptions.contentViewScale = 1.0
         let mainViewController = storyBoard.instantiateViewControllerWithIdentifier("nav") as! UINavigationController
         
         let menuViewController:UIViewController = storyBoard.instantiateViewControllerWithIdentifier("menu") as! MenuViewController

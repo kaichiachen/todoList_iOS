@@ -5,6 +5,7 @@ enum HandleType {
     case edit
 }
 
+/// add, edit item
 class AddTodoItemController:UIViewController {
     
     @IBAction func back(sender: AnyObject) {

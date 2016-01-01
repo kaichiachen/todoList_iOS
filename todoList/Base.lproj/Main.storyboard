@@ -31,6 +31,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="loginTitle" destination="5aI-5O-3IB" id="Fmf-V3-C2d"/>
                         <outlet property="loginTitleHeight" destination="yi4-cw-A7E" id="bt2-49-1Zv"/>
                         <segue destination="Yt8-16-WWN" kind="show" identifier="main" animates="NO" id="Jsv-XM-Ogf"/>
                     </connections>
@@ -89,7 +90,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="H9B-Wa-Pkd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2140" y="-207"/>
+            <point key="canvasLocation" x="2140" y="-243"/>
         </scene>
         <!--todoList-->
         <scene sceneID="35I-ZP-2SE">
@@ -181,7 +182,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ibz-SK-iXH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2139" y="462"/>
+            <point key="canvasLocation" x="2139" y="426"/>
         </scene>
         <!--Add Todo Item Controller-->
         <scene sceneID="4wo-lM-UDg">
@@ -202,7 +203,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="sLo-Zx-E3g">
-                                <rect key="frame" x="111" y="80" width="449" height="30"/>
+                                <rect key="frame" x="101" y="80" width="459" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
@@ -228,7 +229,7 @@
                             <constraint firstItem="jCd-mb-sPK" firstAttribute="top" secondItem="uu9-RW-QIQ" secondAttribute="bottom" constant="40" id="MWf-Ym-vTF"/>
                             <constraint firstAttribute="trailingMargin" secondItem="sJK-c3-qya" secondAttribute="trailing" constant="20" id="RdN-t5-n6U"/>
                             <constraint firstItem="sJK-c3-qya" firstAttribute="top" secondItem="jCd-mb-sPK" secondAttribute="bottom" constant="10" id="ZPT-Lb-55S"/>
-                            <constraint firstItem="sLo-Zx-E3g" firstAttribute="leading" secondItem="uu9-RW-QIQ" secondAttribute="trailing" constant="20" id="bGA-fz-MXP"/>
+                            <constraint firstItem="sLo-Zx-E3g" firstAttribute="leading" secondItem="uu9-RW-QIQ" secondAttribute="trailing" constant="10" id="bGA-fz-MXP"/>
                             <constraint firstItem="uu9-RW-QIQ" firstAttribute="leading" secondItem="xdd-9k-iMO" secondAttribute="leadingMargin" constant="20" id="dS8-tw-lHe"/>
                             <constraint firstItem="gHh-pF-vfG" firstAttribute="top" secondItem="sJK-c3-qya" secondAttribute="bottom" constant="20" id="dc0-UI-w3A"/>
                             <constraint firstItem="sJK-c3-qya" firstAttribute="leading" secondItem="jCd-mb-sPK" secondAttribute="leading" id="qi1-nX-Tbg"/>
@@ -253,7 +254,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FYT-fV-bp6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2849" y="462"/>
+            <point key="canvasLocation" x="2896" y="426"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="qeD-U0-9f3">
@@ -278,7 +279,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FBa-wH-Ciz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1327" y="462"/>
+            <point key="canvasLocation" x="1327" y="426"/>
         </scene>
     </scenes>
     <resources>

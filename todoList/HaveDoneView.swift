@@ -36,7 +36,7 @@ class HaveDoneView:UIView, UITableViewDelegate, UITableViewDataSource {
         let detail = context.storyboard!.instantiateViewControllerWithIdentifier("addtodoitem") as! AddTodoItemController
         detail.type = HandleType.edit
         detail.todoData = todoList[indexPath.row]
-        detail.navigationItem.title = "詳細資訊"
+        detail.navigationItem.title = NSLocalizedString("description", comment: "")
         
         context.navigationController!.pushViewController(detail, animated: true)
     }

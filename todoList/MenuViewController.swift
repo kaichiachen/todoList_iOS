@@ -33,7 +33,7 @@ class MenuViewController:BasicViewController, UITableViewDataSource, UITableView
         
     }
     
-    let menuTextList = ["登出"]
+    let menuTextList = [NSLocalizedString("logout", comment: "")]
     let menuIconList = ["logout"]
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {

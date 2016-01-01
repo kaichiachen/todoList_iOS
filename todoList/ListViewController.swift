@@ -101,4 +101,33 @@ class ListViewController: BasicViewController ,UIScrollViewDelegate {
             }
         }
     }
+    var page:CGFloat = 0
+    override func willRotateToInterfaceOrientation(toInterfaceOrientation: UIInterfaceOrientation, duration: NSTimeInterval) {
+        let currentOffSetX = mainScrollView.contentOffset.x
+        page = currentOffSetX / pageWidth
+        mainScrollView.alpha = 0
+    }
+    
+    override func didRotateFromInterfaceOrientation(fromInterfaceOrientation: UIInterfaceOrientation) {
+        pageWidth = mainScrollView.frame.width
+        pageHeight = mainScrollView.frame.height
+        mainScrollView.contentOffset = CGPoint(x: self.page * pageWidth,y: 0)
+        for i in 0..<2 {
+            UIViewList[i].frame = CGRectMake(CGFloat(i)*pageWidth, 0, pageWidth, pageHeight)
+            UIViewList[i].layoutIfNeeded()
+        }
+        let currentOffSetX = mainScrollView.contentOffset.x
+        let page = currentOffSetX / pageWidth
+        if Float(page) - Float(Int(page)) == 0 {
+            switch Int(page) {
+            case 0:
+                greenBarLeading.constant = -20
+            case 1:
+                greenBarLeading.constant = Utils.getScreenWidth()/2 - 20
+            default: break
+            }
+            self.view.layoutIfNeeded()
+        }
+        mainScrollView.alpha = 1
+    }
 }

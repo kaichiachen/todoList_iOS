@@ -1,0 +1,11 @@
+"facebooklogin" = "Facebook 登入";
+
+"error" = "錯誤";
+"loginerror" = "登入有誤";
+"networkerror" = "連不上網路";
+"blanktitle" = "標題不能空白";
+"OK" = "確定";
+
+"description" = "詳細資訊";
+
+"logout" = "登出";

@@ -30,8 +30,8 @@ class BasicViewController: UIViewController, DataProtocol {
     
     func fetchedDataFail(type:DataType,error:String){
         Log("\(type): error")
-        let alert = UIAlertController(title: "錯誤", message: "網路或伺服器有問題", preferredStyle: UIAlertControllerStyle.Alert)
-        alert.addAction(UIAlertAction(title: "確定", style: UIAlertActionStyle.Default, handler: nil))
+        let alert = UIAlertController(title: NSLocalizedString("error", comment: ""), message: NSLocalizedString("networkerror", comment: ""), preferredStyle: UIAlertControllerStyle.Alert)
+        alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: ""), style: UIAlertActionStyle.Default, handler: nil))
         self.presentViewController(alert, animated: true, completion: nil)
     }
     

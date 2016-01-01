@@ -53,20 +53,20 @@
             <rect key="frame" x="0.0" y="0.0" width="600" height="151"/>
             <autoresizingMask key="autoresizingMask"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="72M-Ez-Ded" id="6fm-eR-qmR">
-                <rect key="frame" x="0.0" y="0.0" width="600" height="151"/>
+                <rect key="frame" x="0.0" y="0.0" width="600" height="150.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dK1-Zk-Ub4">
                         <rect key="frame" x="0.0" y="0.0" width="460" height="151"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xmb-hn-XMv">
-                                <rect key="frame" x="15" y="30" width="430" height="21"/>
+                                <rect key="frame" x="15" y="35.5" width="430" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Wg-Xe-4gm">
-                                <rect key="frame" x="15" y="5" width="430" height="21"/>
+                                <rect key="frame" x="15" y="10" width="430" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
@@ -79,7 +79,7 @@
                             <constraint firstItem="0Wg-Xe-4gm" firstAttribute="leading" secondItem="dK1-Zk-Ub4" secondAttribute="leading" constant="15" id="Ute-Ml-t7r"/>
                             <constraint firstAttribute="trailing" secondItem="Xmb-hn-XMv" secondAttribute="trailing" constant="15" id="YKU-GY-XFt"/>
                             <constraint firstAttribute="trailing" secondItem="0Wg-Xe-4gm" secondAttribute="trailing" constant="15" id="dWu-Y2-3PT"/>
-                            <constraint firstItem="0Wg-Xe-4gm" firstAttribute="top" secondItem="dK1-Zk-Ub4" secondAttribute="top" constant="5" id="jOd-jU-YJs"/>
+                            <constraint firstItem="0Wg-Xe-4gm" firstAttribute="top" secondItem="dK1-Zk-Ub4" secondAttribute="top" constant="10" id="jOd-jU-YJs"/>
                         </constraints>
                     </view>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Uxz-6d-0IG">

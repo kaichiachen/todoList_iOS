@@ -1,0 +1,21 @@
+
+/* Class = "UILabel"; text = "ToDoList"; ObjectID = "5aI-5O-3IB"; */
+"5aI-5O-3IB.text" = "ToDoList";
+
+/* Class = "UIButton"; normalTitle = "已完成"; ObjectID = "NSA-rU-GSk"; */
+"NSA-rU-GSk.normalTitle" = "Finished";
+
+/* Class = "UILabel"; text = "描述："; ObjectID = "jCd-mb-sPK"; */
+"jCd-mb-sPK.text" = "Detail：";
+
+/* Class = "UIButton"; normalTitle = "未完成"; ObjectID = "k7D-1C-XKg"; */
+"k7D-1C-XKg.normalTitle" = "Todo";
+
+/* Class = "UILabel"; text = "Name"; ObjectID = "oDN-RX-SfQ"; */
+"oDN-RX-SfQ.text" = "Name";
+
+/* Class = "UINavigationItem"; title = "todoList"; ObjectID = "oYA-Do-enJ"; */
+"oYA-Do-enJ.title" = "todoList";
+
+/* Class = "UILabel"; text = "標題："; ObjectID = "uu9-RW-QIQ"; */
+"uu9-RW-QIQ.text" = "title：";

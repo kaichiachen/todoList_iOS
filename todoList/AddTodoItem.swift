@@ -19,7 +19,7 @@ class AddTodoItemController:UIViewController {
     @IBOutlet weak var detailTextField: UITextView! {
         didSet {
             detailTextField.layer.borderWidth = 2
-            detailTextField.layer.borderColor = UIColor.flatGreenColor().CGColor
+            detailTextField.layer.borderColor = UIColor.flatGrayColor().CGColor
             detailTextField.layer.masksToBounds = true
             detailTextField.layer.cornerRadius = 10
         }
@@ -27,6 +27,15 @@ class AddTodoItemController:UIViewController {
     
     
     @IBAction func complete(sender: AnyObject) {
+        if titleTextField.text == "" {
+            let alert = UIAlertController(title: NSLocalizedString("error", comment: ""), message: NSLocalizedString("blanktitle", comment: ""), preferredStyle: UIAlertControllerStyle.Alert)
+            alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: ""), style: UIAlertActionStyle.Default, handler: nil))
+            self.presentViewController(alert, animated: true, completion: nil)
+            titleTextField.layer.borderColor = UIColor.flatRedColor().CGColor
+            titleTextField.layer.borderWidth = 1
+            titleTextField.layer.masksToBounds = true
+            titleTextField.layer.cornerRadius = 3
+        }
         switch type {
         case .add:
             DataController.shareInstance().addTodoItem(titleTextField.text!, detail: detailTextField.text)

@@ -7,6 +7,7 @@ import NVActivityIndicatorView
 
 class LoginViewController: BasicViewController {
 
+    @IBOutlet weak var loginTitle: UILabel!
     @IBOutlet weak var loginTitleHeight: NSLayoutConstraint!
     
     var indicator:NVActivityIndicatorView!
@@ -26,10 +27,9 @@ class LoginViewController: BasicViewController {
             let loginButton:UIButton = UIButton(type: UIButtonType.Custom)
             loginButton.center = self.view.center
             loginButton.backgroundColor = UIColor.flatBlueColor()
-            loginButton.frame = CGRectMake(width/2 - 90,250,180,40)
             loginButton.layer.masksToBounds = true
             loginButton.layer.cornerRadius = 5
-            loginButton.setTitle("Facebook Login", forState: UIControlState.Normal)
+            loginButton.setTitle(NSLocalizedString("facebooklogin", comment: ""), forState: UIControlState.Normal)
             loginButton.addTarget(self, action: "click", forControlEvents: UIControlEvents.TouchUpInside)
             return loginButton
         }()
@@ -43,9 +43,13 @@ class LoginViewController: BasicViewController {
             let view = NVActivityIndicatorView(frame: CGRectMake(width/2 - 50,250,100,100))
             view.type = .Pacman
             view.color = UIColor.flatBlueColor()
+            view.alpha = 0
             return view
             }()
-
+        
+        self.view.addSubview(indicator)
+        
+        setAutoLayout()
     }
     
     override func viewDidAppear(animated: Bool) {
@@ -66,29 +70,44 @@ class LoginViewController: BasicViewController {
         appDelegate.window?.rootViewController = slideMenuController
     }
     
+    func setAutoLayout(){
+        loginButton.translatesAutoresizingMaskIntoConstraints = false
+        indicator.translatesAutoresizingMaskIntoConstraints = false
+        
+        view.addConstraint(NSLayoutConstraint(item: loginButton, attribute: .Top, relatedBy: .Equal, toItem: loginTitle, attribute: .Bottom, multiplier: 1, constant: 30))
+        view.addConstraint(NSLayoutConstraint(item: loginButton, attribute: .CenterX, relatedBy: .Equal, toItem: loginTitle, attribute: .CenterX, multiplier: 1, constant: 0))
+        view.addConstraint(NSLayoutConstraint(item: loginButton, attribute: .Width, relatedBy: .Equal, toItem: nil, attribute: .NotAnAttribute, multiplier: 1, constant: 180))
+        view.addConstraint(NSLayoutConstraint(item: loginButton, attribute: .Height, relatedBy: .Equal, toItem: nil, attribute: .NotAnAttribute, multiplier: 1, constant: 40))
+        
+        view.addConstraint(NSLayoutConstraint(item: indicator, attribute: .Top, relatedBy: .Equal, toItem: loginTitle, attribute: .Bottom, multiplier: 1, constant: 30))
+        view.addConstraint(NSLayoutConstraint(item: indicator, attribute: .CenterX, relatedBy: .Equal, toItem: loginTitle, attribute: .CenterX, multiplier: 1, constant: 0))
+        view.addConstraint(NSLayoutConstraint(item: indicator, attribute: .Width, relatedBy: .Equal, toItem: nil, attribute: .NotAnAttribute, multiplier: 1, constant: 100))
+        view.addConstraint(NSLayoutConstraint(item: indicator, attribute: .Height, relatedBy: .Equal, toItem: nil, attribute: .NotAnAttribute, multiplier: 1, constant: 100))
+    }
+    
     /**
      selector of fb login button click function
      */
     func click(){
         guard GCNetworkReachability.reachabilityForInternetConnection().isReachable()  else {
-            let alert = UIAlertController(title: "錯誤", message: "連不上網路", preferredStyle: UIAlertControllerStyle.Alert)
-            alert.addAction(UIAlertAction(title: "確定", style: UIAlertActionStyle.Default, handler: nil))
+            let alert = UIAlertController(title: NSLocalizedString("error", comment: ""), message: NSLocalizedString("networkerror", comment: ""), preferredStyle: UIAlertControllerStyle.Alert)
+            alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: ""), style: UIAlertActionStyle.Default, handler: nil))
             self.presentViewController(alert, animated: true, completion: nil)
             return
         }
         
         loginButton.removeFromSuperview()
         indicator.startAnimation()
-        self.view.addSubview(indicator)
+        indicator.alpha = 1
         
         let login:FBSDKLoginManager = FBSDKLoginManager()
         login.logInWithReadPermissions(["public_profile"], fromViewController: self, handler: { result, error in
             if error != nil || result.token == nil {
-                let alert = UIAlertController(title: "錯誤", message: "登入有誤", preferredStyle: UIAlertControllerStyle.Alert)
-                alert.addAction(UIAlertAction(title: "確定", style: UIAlertActionStyle.Default, handler: nil))
+                let alert = UIAlertController(title: NSLocalizedString("error", comment: ""), message: NSLocalizedString("loginerror", comment: ""), preferredStyle: UIAlertControllerStyle.Alert)
+                alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: ""), style: UIAlertActionStyle.Default, handler: nil))
                 self.presentViewController(alert, animated: true, completion: nil)
-                self.indicator.removeFromSuperview()
-                self.view.addSubview(self.loginButton)
+                self.indicator.alpha = 0
+                self.loginButton.alpha = 1
             } else {
                 self.token = result.token.tokenString
                 self.fetchUserData()
@@ -105,12 +124,11 @@ class LoginViewController: BasicViewController {
     override func loginSuccess(data: NSDictionary) {
         super.loginSuccess(data)
         dispatch_async(dispatch_get_main_queue()) {
-            self.indicator.removeFromSuperview()
+            self.indicator.alpha = 0
             if DataCache.shareInstance().isLogin(){
                 self.performSegueWithIdentifier("main", sender: self)
             }
         }
     }
-    
 }
 

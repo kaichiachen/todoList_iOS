@@ -32,7 +32,7 @@
                     </view>
                     <connections>
                         <outlet property="loginTitleHeight" destination="yi4-cw-A7E" id="bt2-49-1Zv"/>
-                        <segue destination="Yt8-16-WWN" kind="show" identifier="main" id="Jsv-XM-Ogf"/>
+                        <segue destination="Yt8-16-WWN" kind="show" identifier="main" animates="NO" id="Jsv-XM-Ogf"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
